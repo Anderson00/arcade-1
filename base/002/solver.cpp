@@ -5,22 +5,20 @@
 
 using namespace std;
 
-struct Carro{
-    int pass; // Passageiros
-    int passMax; // limite de Passageiros
-    int gas; // tanque
-    int gasMax; // limite do tanque
-    int km; // quantidade de quilometragem
+class Carro{
 
-    Carro(int pass = 0, int passMax = 2, int gas = 0,int gasMax = 100, int km = 0){
-        this->pass = pass; // Passageiros
+public:
+
+    Carro(int pass = 0, int passMax = 2, int gas = 0, int gasMax = 100, int km = 0){
+        this->pass = pass;       // Passageiros
         this->passMax = passMax; // limite de Passageiros
-        this->gas = gas; // tanque
-        this->gasMax = gasMax; // limite do tanque
-        this->km = km; // quantidade de quilometragem
+        this->gas = gas;         // tanque
+        this->gasMax = gasMax;   // limite do tanque
+        this->km = km;           // quantidade de quilometragem
     }
 
     ~Carro(){
+        //destructor
     }
 
     string toString(){
@@ -65,7 +63,13 @@ struct Carro{
             this->gas = gas - km;
             this->km = this->km + km;
         }
-    }    
+    }  
+private:  
+    int pass;    // Passageiros
+    int passMax; // limite de Passageiros
+    int gas;     // tanque
+    int gasMax;  // limite do tanque
+    int km;      // quantidade de quilometragem
 };
 
 /*

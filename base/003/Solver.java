@@ -32,7 +32,7 @@ class Motoca {
         this.tempo += tempo;
     }
 	
-	bool embarcar(Pessoa * pessoa) {
+	boolean embarcar(Pessoa pessoa) {
 		if(this.pessoa == null){
 			this.pessoa = pessoa;
 			return true;
@@ -41,14 +41,14 @@ class Motoca {
 		return false;
 	}
 	
-	Pessoa * desembarcar() {
-		if(this.pessoa != nullptr){
-			Pessoa * pessoa = this.pessoa;
+	Pessoa desembarcar() {
+		if(this.pessoa != null){
+			Pessoa pessoa = this.pessoa;
 			this->pessoa = null;
 			return pessoa;
 		}else{
 			System.out.println("fail: moto vazia");
-			return nullptr;
+			return null;
 		}
 	}
 

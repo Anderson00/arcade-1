@@ -110,7 +110,7 @@ class Calculadora
 
 - Respostas
     - [C++](solver.cpp)
-    - [Java](Controller.java)
+    - [Java](Solver.java)
     
 
 ## Dicas

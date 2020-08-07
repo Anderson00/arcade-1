@@ -7,7 +7,9 @@ int main(){
     string line;
     string cmd;
     float acc = 0;
+
     while(true){
+        cmd.clear();
         getline(cin, line);
         cout << "$" << line << "\n";
         stringstream ss(line);
@@ -29,7 +31,7 @@ int main(){
             float value;
             ss >> value;
             if(value == 0)
-                puts("fail: division by zero");
+                cout << "fail: division by zero" << endl;
             else
                 acc /= value;
         }else if(cmd == "addm"){
@@ -38,7 +40,7 @@ int main(){
                 acc += value;
             }
         }else{
-            puts("fail: command not found");
+            cout << "fail: command not found" << endl;
         }
 
     }

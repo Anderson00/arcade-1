@@ -3,21 +3,21 @@
 #include <cstdio>
 using namespace std;
 
-struct Calc{
-    int bateria;
-    int limiteBateria;
-    float display;
+class Calc{
 
-    Calc(int limiteBateria = 0){
-        this->limiteBateria = limiteBateria;
-        this->bateria = 0;
-        this->display = 0.0;
-    }
+public:
+
+    Calc(int limiteBateria = 0) : 
+        limiteBateria{limiteBateria},
+        bateria{0},
+        display{0.0f} {}
+
     void charge(int carga){
         bateria += carga;
         if(bateria > limiteBateria)
             bateria = limiteBateria;
     }
+
     bool gastarBateria(){
         if(bateria == 0){
             cout << "fail: bateria insuficiente" << endl;
@@ -26,10 +26,12 @@ struct Calc{
         this->bateria -= 1;
         return true;
     }
+
     void soma(int a, int b){
         if(gastarBateria())
             display = a + b;
     }
+    
     void div(int a, int b){
         if(!gastarBateria())
             return;
@@ -41,6 +43,11 @@ struct Calc{
     void show(){
         printf("display = %.2f, battery = %d\n", this->display, this->bateria);
     }
+
+private:
+    int bateria;
+    int limiteBateria;
+    float display;
 };
 
 int main(){
